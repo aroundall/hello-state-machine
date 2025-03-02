@@ -6,13 +6,13 @@ public class SubmittedState implements ApplicationState {
     SubmittedState() {}
 
     @Override
-    public Status transition(Action action) {
+    public ApplicationState transition(Action action) {
 
         return null;
     }
 
     @Override
-    public String getName() {
-        return "SUBMITTED";
+    public State state() {
+        return State.SUBMITTED;
     }
 }

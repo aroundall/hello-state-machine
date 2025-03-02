@@ -4,15 +4,15 @@ import org.amuji.simple.Action;
 
 public class DraftState implements ApplicationState {
     @Override
-    public Status transition(Action action) {
+    public ApplicationState transition(Action action) {
         if (action != Action.SUBMIT) {
             throw new IllegalArgumentException("Does not support this action.");
         }
-        return Status.SUBMITTED;
+        return new SubmittedState();
     }
 
     @Override
-    public String getName() {
-        return "";
+    public State state() {
+        return State.DRAFT;
     }
 }

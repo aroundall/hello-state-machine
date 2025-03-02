@@ -1,6 +1,6 @@
 package org.amuji.simple;
 
-import org.amuji.simple.state.Status;
+import org.amuji.simple.state.State;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -12,6 +12,6 @@ class ApplicationServiceTest {
         ApplicationService service = new ApplicationService();
         Application submitted = service.submit(draft);
 
-        assertThat(submitted.getStatus()).isEqualTo(Status.SUBMITTED);
+        assertThat(submitted.getStatus()).isEqualTo(State.SUBMITTED);
     }
 }

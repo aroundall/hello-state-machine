@@ -1,6 +1,6 @@
 package org.amuji.simple;
 
-import org.amuji.simple.state.Status;
+import org.amuji.simple.state.State;
 
 import java.util.UUID;
 
@@ -11,10 +11,11 @@ public class Application {
 
     private final String id;
     private final Type type = Type.SINGLE_LEVEL;
-    private Status status;
+    private State state;
 
     public Application() {
         this.id = UUID.randomUUID().toString();
+        state = State.DRAFT;
     }
 
     public String getId() {
@@ -25,12 +26,12 @@ public class Application {
         return type;
     }
 
-    public Status getStatus() {
-        return status;
+    public State getStatus() {
+        return state;
     }
 
-    public Application setStatus(Status status) {
-        this.status = status;
+    public Application setStatus(State state) {
+        this.state = state;
         return this;
     }
 }

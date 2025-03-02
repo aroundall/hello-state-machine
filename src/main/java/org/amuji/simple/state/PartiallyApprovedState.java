@@ -4,13 +4,13 @@ import org.amuji.simple.Action;
 
 public class PartiallyApprovedState implements ApplicationState {
     @Override
-    public Status transition(Action action) {
+    public ApplicationState transition(Action action) {
 
         return null;
     }
 
     @Override
-    public String getName() {
-        return "";
+    public State state() {
+        return State.PARTIALLY_APPROVED;
     }
 }
