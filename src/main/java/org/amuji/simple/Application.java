@@ -1,40 +1,36 @@
 package org.amuji.simple;
 
-import org.amuji.simple.state.ApplicationState;
-import org.amuji.simple.state.SubmittedState;
+import org.amuji.simple.state.Status;
+
+import java.util.UUID;
 
 public class Application {
     public enum Type {
         SINGLE_LEVEL,
-        TWO_LEVEL
     }
 
-    private final Type type;
-    private ApplicationState currentState;
+    private final String id;
+    private final Type type = Type.SINGLE_LEVEL;
+    private Status status;
 
-    public Application(Type type) {
-        this.type = type;
-        this.currentState = SubmittedState.getInstance();
+    public Application() {
+        this.id = UUID.randomUUID().toString();
+    }
+
+    public String getId() {
+        return id;
     }
 
     public Type getType() {
         return type;
     }
 
-    public void approve() {
-        currentState.approve(this);
+    public Status getStatus() {
+        return status;
     }
 
-    public void reject() {
-        currentState.reject(this);
-    }
-
-    public void transitionTo(ApplicationState newState) {
-        System.out.println("State changed from " + currentState.getName() + " to " + newState.getName());
-        this.currentState = newState;
-    }
-
-    public String getState() {
-        return currentState.getName();
+    public Application setStatus(Status status) {
+        this.status = status;
+        return this;
     }
 }

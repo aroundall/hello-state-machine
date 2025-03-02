@@ -1,27 +1,16 @@
 package org.amuji.simple.state;
 
-import org.amuji.simple.Application;
+import org.amuji.simple.Action;
 
-class PartiallyApprovedState implements ApplicationState {
-    private static final PartiallyApprovedState INSTANCE = new PartiallyApprovedState();
-    private PartiallyApprovedState() {}
-
-    public static PartiallyApprovedState getInstance() {
-        return INSTANCE;
-    }
-
+public class PartiallyApprovedState implements ApplicationState {
     @Override
-    public void approve(Application context) {
-        context.transitionTo(FullyApprovedState.getInstance());
-    }
+    public Status transition(Action action) {
 
-    @Override
-    public void reject(Application context) {
-        context.transitionTo(RejectedState.getInstance());
+        return null;
     }
 
     @Override
     public String getName() {
-        return "PARTIALLY_APPROVED";
+        return "";
     }
 }

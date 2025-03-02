@@ -1,27 +1,16 @@
 package org.amuji.simple.state;
 
-import org.amuji.simple.Application;
+import org.amuji.simple.Action;
 
-class RejectedState implements ApplicationState {
-    private static final RejectedState INSTANCE = new RejectedState();
-    private RejectedState() {}
-
-    public static RejectedState getInstance() {
-        return INSTANCE;
-    }
-
+public class RejectedState implements ApplicationState {
     @Override
-    public void approve(Application context) {
-        System.out.println("Cannot approve - already rejected");
-    }
+    public Status transition(Action action) {
 
-    @Override
-    public void reject(Application context) {
-        System.out.println("Cannot reject - already rejected");
+        return null;
     }
 
     @Override
     public String getName() {
-        return "REJECTED";
+        return "";
     }
 }

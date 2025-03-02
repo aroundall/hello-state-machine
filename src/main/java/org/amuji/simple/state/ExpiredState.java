@@ -2,9 +2,7 @@ package org.amuji.simple.state;
 
 import org.amuji.simple.Action;
 
-public class SubmittedState implements ApplicationState {
-    SubmittedState() {}
-
+public class ExpiredState implements ApplicationState {
     @Override
     public Status transition(Action action) {
 
@@ -13,6 +11,6 @@ public class SubmittedState implements ApplicationState {
 
     @Override
     public String getName() {
-        return "SUBMITTED";
+        return "";
     }
 }

@@ -1,9 +1,8 @@
 package org.amuji.simple.state;
 
-import org.amuji.simple.Application;
+import org.amuji.simple.Action;
 
 public interface ApplicationState {
-    void approve(Application context);
-    void reject(Application context);
+    Status transition(Action action);
     String getName();
 }

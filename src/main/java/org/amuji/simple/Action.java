@@ -1,8 +1,7 @@
 package org.amuji.simple;
 
-public enum ApplicationEvent {
+public enum Action {
     SUBMIT,
     APPROVE,
     REJECT,
-    EXPIRE
 }
