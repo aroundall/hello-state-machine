@@ -7,8 +7,11 @@ public class SubmittedState implements ApplicationState {
 
     @Override
     public ApplicationState transition(Action action) {
-
-        return null;
+        return switch (action) {
+            case APPROVE -> new ApprovedState();
+            case REJECT -> new RejectedState();
+            default -> throw new IllegalArgumentException("Invalid action: " + action);
+        };
     }
 
     @Override
